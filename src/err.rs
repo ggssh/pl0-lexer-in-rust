@@ -1,4 +1,4 @@
-use crate::token::{self, token::Token};
+use crate::token::token::Token;
 use std::usize;
 
 /**
@@ -6,7 +6,7 @@ use std::usize;
  */
 pub fn error_handler(cur_line: usize, cur_position: usize, token: Token) {
     eprintln!(
-        "unregonized words : {} at {},{}",
+        "Unregonized words : {} at {},{}",
         token.literal, cur_line, cur_position
     );
 }

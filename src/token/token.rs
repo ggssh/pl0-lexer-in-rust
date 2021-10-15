@@ -1,5 +1,8 @@
 use std::{collections::HashMap, usize};
 
+/**
+ * token定义及相关函数
+ */
 // Eq和Hash判断map中是否已有相等元素(其实没有必要)
 #[derive(PartialEq, Eq, Hash, Debug, Clone)]
 pub enum TokenType {
@@ -40,7 +43,7 @@ pub enum TokenType {
 // 一张 单词种别:对应的种别编码
 #[derive(Debug, Clone)]
 pub struct TokenMap {
-    map: HashMap<TokenType, usize>,
+    pub map: HashMap<TokenType, usize>,
 }
 
 impl TokenMap {
@@ -84,15 +87,22 @@ impl TokenMap {
 
 #[derive(Debug, Clone)]
 pub struct Token {
-    pub tokentype: TokenType,
-    pub literal: String,
+    pub tokentype: TokenType, // token类型
+    pub literal: String,      // token值
 }
 
 impl Token {
     pub fn display(self, tokenmap: &TokenMap) {
         match tokenmap.map.get(&self.tokentype) {
-            Some(_) => todo!(),
+            Some(num) => println!("<{},{}>", num, self.literal),
             None => todo!(),
+        }
+    }
+
+    pub fn new<T: Into<String>>(tokentype: TokenType, literal: T) -> Self {
+        Token {
+            tokentype,
+            literal: literal.into(),
         }
     }
 }

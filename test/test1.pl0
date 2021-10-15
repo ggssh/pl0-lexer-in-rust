@@ -1,10 +1,10 @@
-const a=10; /*常量说明部分*/
-var b,c;    /*变量说明部分*/
+const a=10;
+var b,c;    
 procedure   p;
     begin
         c :=b+a;
     end;
-begin       /*主程序*/
+begin
     read(b);
     while b#0 do
         begin
