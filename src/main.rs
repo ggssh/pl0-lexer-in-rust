@@ -17,8 +17,8 @@ fn read_in_test() {
 }
 #[test]
 fn lexer_new_test() {
-    let input = common::read_in("test/test3.pl0".to_owned());
-    println!("{}", input);
+    let input = common::read_in("test/test1.pl0".to_owned());
+    // println!("{}", input);
     let mut l = lexer::lexer::Lexer::new(input);
     let token_map = TokenMap::new();
     // bugfix : 读第一个token时会返回NULL

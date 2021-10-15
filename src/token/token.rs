@@ -94,7 +94,7 @@ pub struct Token {
 impl Token {
     pub fn display(self, tokenmap: &TokenMap) {
         match tokenmap.map.get(&self.tokentype) {
-            Some(num) => println!("<{},{}>", num, self.literal),
+            Some(num) => println!("({},\"{}\")", num, self.literal),
             None => todo!(),
         }
     }
